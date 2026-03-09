@@ -1,6 +1,7 @@
-import { Text, View,Button,StyleSheet, TouchableOpacity,Image,ImageBackground } from "react-native";
+import { Text, View,Button,StyleSheet, TouchableOpacity,Image,ImageBackground,Linking } from "react-native";
 import {LinearGradient} from "expo-linear-gradient";
 import {Feather} from "@expo/vector-icons";
+import {router} from "expo-router";
 
 export default function Index() {
   function AdicionarPerfil({ IconComponent, iconName, label}: any) {
@@ -14,6 +15,10 @@ export default function Index() {
   );
 }
 
+const abrirTela = () =>{
+    router.push("/home");
+};
+
   return (
 <ImageBackground
   source={require('../assets/images/frieren.jpg')}
@@ -25,12 +30,12 @@ export default function Index() {
         <View style={styles.linha}>
         
           <View style={styles.profile}>
-            <TouchableOpacity style={styles.perfil}><Image source={require('../assets/images/rocha.png')} style={styles.imagem}/></TouchableOpacity>
+            <TouchableOpacity style={styles.perfil} onPress={abrirTela}><Image source={require('../assets/images/rocha.png')} style={styles.imagem}/></TouchableOpacity>
             <Text style={styles.nome}>Rocha</Text>
           </View>
 
           <View style={styles.profile}>
-              <TouchableOpacity style={styles.perfil}><Image source={require('../assets/images/fernando.jpeg')} style={styles.imagem}/></TouchableOpacity>
+              <TouchableOpacity style={styles.perfil} onPress={abrirTela}><Image source={require('../assets/images/fernando.jpeg')} style={styles.imagem}/></TouchableOpacity>
               <Text style={styles.nome}>Fernando</Text>  
           </View>
 
@@ -38,12 +43,12 @@ export default function Index() {
 
       <View style={styles.linha}>
         <View style={styles.profile}>
-          <TouchableOpacity style={styles.perfil}><Image source={require('../assets/images/buso.png')} style={styles.imagem} /></TouchableOpacity>
+          <TouchableOpacity style={styles.perfil} onPress={abrirTela}><Image source={require('../assets/images/buso.png')} style={styles.imagem} /></TouchableOpacity>
           <Text style={styles.nome}>Buso</Text>
         </View>
 
         <View style={styles.profile}>
-          <TouchableOpacity style={styles.perfil}><Image source={require('../assets/images/pele.jpg')} style={styles.imagem}/></TouchableOpacity>
+          <TouchableOpacity style={styles.perfil} onPress={abrirTela}><Image source={require('../assets/images/pele.jpg')} style={styles.imagem}/></TouchableOpacity>
           <Text style={styles.nome}>Pelesenha</Text>
         </View>
       </View>
@@ -90,7 +95,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: "10%",
     fontSize: 25,
-    color:"#000000",
+    color:"#ffffff",
+
   },
   container:{
     flex:1,
