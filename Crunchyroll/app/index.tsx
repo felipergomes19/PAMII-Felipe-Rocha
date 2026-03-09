@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
     marginTop: "10%",
     fontSize: 25,
     color:"#ffffff",
-
   },
+  
   container:{
     flex:1,
     alignItems:"center",
